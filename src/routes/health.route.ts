@@ -7,4 +7,4 @@ router.get("/", (req, res) => {
   res.status(200).json(Ok({ time: Date.now() }));
 });
 
-export default router;
+export { router as healthRouter };
