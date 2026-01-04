@@ -3,6 +3,7 @@ import express, { NextFunction, Request, Response } from "express";
 import { PORT } from "./constants";
 import { Err } from "./models";
 import healthRoute from "./routes/health.route";
+import helloRoute from "./routes/hello.route";
 import { ResponseError } from "./util/error";
 
 const app = express();
@@ -12,6 +13,7 @@ app.disable("x-powered-by");
 app.use(express.json());
 
 app.use("/api/health", healthRoute);
+app.use("/api/hello", helloRoute);
 
 app.use((error: Error, _req: Request, res: Response, _next: NextFunction) => {
   let statusCode = 500,
