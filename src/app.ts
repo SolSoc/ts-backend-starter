@@ -4,6 +4,7 @@ import { PORT } from "./constants";
 import { Err } from "./models";
 import healthRoute from "./routes/health.route";
 import { ResponseError } from "./util/error";
+
 const app = express();
 
 app.disable("x-powered-by");
